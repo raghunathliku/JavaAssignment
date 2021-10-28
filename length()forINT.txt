@@ -1,0 +1,13 @@
+length()  :-
+
+
+string.length() : length() method is a final variable which is applicable for string 
+objects. The length() method returns the number of characters present in the string. 
+
+ 
+so as it is returning only string value so it can accept only string value but for int value
+ it can not fetch or read int value so , this method will show compile time error for int datatype.
+
+ex-   String s[]={"Techno","elevate","test","yantra"};
+so the first index element size is 7.  i.e elevate.
+so the syntax for length is:-   System.out.println(s[1].length());
