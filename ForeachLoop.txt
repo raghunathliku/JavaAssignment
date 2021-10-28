@@ -1,0 +1,23 @@
+foreach loop:-
+
+this is used to print the element of array index .The difference between for and for each 
+loop is , we don't need to intialize the iteration process for forloop rather it would
+accept all the array value and give its output..
+
+the program for this is..
+
+package com.technoelevate.javabasics.arrays;
+
+public class ForEachLoop {
+
+	public static void main(String[] args) {
+		int arr[]= {12,34,23,45};
+		for(int a:arr) {
+
+			System.out.println(a);
+		}
+		
+
+	}
+
+}
