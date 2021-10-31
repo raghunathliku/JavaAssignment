@@ -9,13 +9,13 @@ public class Owner {
 		String p=sc.next();
 		System.out.println("Enter product price :");
 		int i=sc.nextInt();
-		return m-i;
+		return i;
 	}
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
 		Owner o1=new Owner();
 
-		System.out.println("Enter the amount of money from Owner for shoping");
+		System.out.println("Enter the amount of money  for shoping from Owner :");
 		 o1.m=sc.nextInt();
 		 int total=o1.purchased();
 		 
