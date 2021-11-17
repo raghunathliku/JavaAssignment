@@ -1,0 +1,227 @@
+package studentsortingproject;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+
+public class Student {
+	String name;
+	int id;
+	int age;
+	int standard;
+	int marks;
+	long mob;
+
+	public Student() {
+
+	}
+
+	public Student(String name, int id, int age, int standard, int marks, long mob) {
+
+		this.name = name;
+		this.id = id;
+		this.age = age;
+		this. standard =  standard;
+		this.marks = marks;
+		this.mob = mob;
+	}
+
+	public void id(ArrayList<Student> list1) {
+		int a[] = new int[5];
+		for (int i = 0; i < 5; i++) {
+			a[i] = list1.get(i).id;
+		}
+		Arrays.sort(a);
+		for (int i = 0; i < a.length; i++) {
+			for (int j = 0; j < a.length; j++) {
+				if (a[i] == list1.get(j).id)
+					System.out.println(list1.get(j));
+			}
+		}
+		System.out.println("Enter 1 for main menu");
+		Scanner scan = new Scanner(System.in);
+		Student s5 = new Student();
+
+		int b = scan.nextInt();
+		if (b == 1)
+			s5.callMenu(list1);
+		else
+			System.out.println("Thank you");
+	}
+
+	public void name(ArrayList<Student> list1) {
+
+		String a[] = new String[5];
+		for (int i = 0; i < 5; i++) {
+			a[i] = list1.get(i).name;
+		}
+		Arrays.sort(a);
+		for (int i = 0; i < a.length; i++) {
+			for (int j = 0; j < a.length; j++) {
+				if (a[i] == list1.get(j).name)
+					System.out.println(list1.get(j));
+			}
+		}
+		System.err.println("Enter 1 for main menu");
+		Scanner scan = new Scanner(System.in);
+		Student s5 = new Student();
+
+		int b = scan.nextInt();
+		if (b == 1)
+			s5.callMenu(list1);
+		else
+			System.out.println("Thank you");
+
+	}
+
+	public void age(ArrayList<Student> list1) {
+		int a[] = new int[5];
+		for (int i = 0; i < 5; i++) {
+			a[i] = list1.get(i).age;
+		}
+		Arrays.sort(a);
+		for (int i = 0; i < a.length; i++) {
+			for (int j = 0; j < a.length; j++) {
+				if (a[i] == list1.get(j).age)
+					System.out.println(list1.get(j));
+			}
+		}
+		System.err.println("Enter 1 for main menu");
+		Scanner scan = new Scanner(System.in);
+		Student s5 = new Student();
+
+		int b = scan.nextInt();
+		if (b == 1)
+			s5.callMenu(list1);
+		else
+			System.out.println("Thank you");
+	}
+
+	public void standard(ArrayList<Student> list1) {
+		int a[] = new int[5];
+		for (int i = 0; i < 5; i++) {
+			a[i] = list1.get(i).standard;
+		}
+		Arrays.sort(a);
+		for (int i = 0; i < a.length; i++) {
+			for (int j = 0; j < a.length; j++) {
+				if (a[i] == list1.get(j).standard)
+					System.out.println(list1.get(j));
+			}
+			}
+		
+		System.err.println("Enter 1 for main menu");
+		Scanner scan = new Scanner(System.in);
+		Student s5 = new Student();
+
+		int b = scan.nextInt();
+		if (b == 1)
+			s5.callMenu(list1);
+		else
+			System.out.println("Thank you");
+	}
+
+	public void marks(ArrayList<Student> list1) {
+		int a[] = new int[5];
+		for (int i = 0; i < 5; i++) {
+			a[i] = list1.get(i).marks;
+		}
+		Arrays.sort(a);
+		for (int i = 0; i < a.length; i++) {
+			for (int j = 0; j < a.length; j++) {
+				if (a[i] == list1.get(j).marks)
+					System.out.println(list1.get(j));
+			}
+		}
+		System.err.println("Enter 1 for main menu");
+		Scanner scan = new Scanner(System.in);
+		Student s5 = new Student();
+
+		int b = scan.nextInt();
+		if (b == 1)
+			s5.callMenu(list1);
+		else
+			System.out.println("Thank you");
+	}
+
+	public void phno(ArrayList<Student> list1) {
+		long a[] = new long[5];
+		for (int i = 0; i < 5; i++) {
+			a[i] = list1.get(i).mob;
+		}
+		Arrays.sort(a);
+		for (int i = 0; i < a.length; i++) {
+			for (int j = 0; j < a.length; j++) {
+				if (a[i] == list1.get(j).mob)
+					System.out.println(list1.get(j));
+			}
+		}
+		System.err.println("Enter 1 for main menu");
+		Scanner scan = new Scanner(System.in);
+		Student s5 = new Student();
+
+		int b = scan.nextInt();
+		if (b == 1)
+			s5.callMenu(list1);
+		else
+			System.out.println("Thank you");
+	}
+
+	public void callMenu(ArrayList<Student> list1) {
+		System.err.println("press values from 1 to 5\n 1.sort using id\n 2.sort using name\n "
+				+ "3.sort using standard\n 4.sort using age\n "
+				+"5.sort using mobile number\n 6.sort using marks");
+		Scanner scan = new Scanner(System.in);
+		Student s5 = new Student();
+		int a = scan.nextInt();
+		switch (a) {
+
+		case 1:
+			s5.id(list1);
+			break;
+		case 2:
+			s5.name(list1);
+			break;
+
+		case 3:
+			s5.standard(list1);
+			break;
+
+		case 4:
+			s5.age(list1);
+			break;
+
+		case 5:
+			s5.phno(list1);
+			break;
+		case 6:
+			s5.marks(list1);
+			break;
+			default: System.out.println("sorry ! invalid entry.....");	
+			
+		}
+	}
+
+	
+
+	@Override
+	public String toString() {
+		return "Student [name=" + name + ", id=" + id + ", age=" + age + ", standard=" + standard + ", marks=" + marks
+				+ ", mob=" + mob + "]";
+	}
+
+	public static void main(String[] args) {
+		ArrayList<Student> list = new ArrayList<Student>();
+		Student s5 = new Student();
+		list.add(new Student("Raghunath Das", 111, 13, 8, 90, 7894025222l));
+		list.add(new Student("Shri Ram", 232, 15, 10, 80, 7894025342l));
+		list.add(new Student("liku das", 115, 12, 9, 75, 2394025222l));
+		list.add(new Student("rajib sahoo", 161, 16, 11, 100, 6494025222l));
+		list.add(new Student("suvam sahoo", 141, 11, 7, 87, 1294025222l));
+
+		System.out.println("Student Details");
+		s5.callMenu(list);
+
+	}
+}
