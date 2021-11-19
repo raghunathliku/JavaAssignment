@@ -1,0 +1,16 @@
+
+different types of rdbms software are given below
+
+
+Here is the list of top 10 most popular RDBMSs are:
+Oracle
+MySQL
+SQL Server
+No SQL
+PostgreSQL
+IBM DB2
+Microsoft Access
+SQLite
+MariaDB
+Informix
+Azure SQL
