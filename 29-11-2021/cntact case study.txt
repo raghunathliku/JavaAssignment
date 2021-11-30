@@ -1,0 +1,310 @@
+package com.technoelevate.case_study.contactdetails;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Contact {
+	
+	
+	
+	
+	public void getName(String query) throws SQLException {
+		Scanner scanner=new Scanner(System.in);
+		List<String> list=new ArrayList<String>();
+		String getname=null;
+		Connection connection = null;
+		Statement statement = null;
+		ResultSet executeQuery = null;
+
+		
+			try {
+				Class.forName("com.mysql.cj.jdbc.Driver");
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			String dburl = "jdbc:mysql://localhost:3306/case_study?user=root&password=LIKU@TIGER";
+			connection = DriverManager.getConnection(dburl);
+			String query2 = query;
+			statement = connection.createStatement();
+			executeQuery = statement.executeQuery(query2);
+			System.out.println("enter name");
+			String name = scanner.next();
+			//String result[] = null;
+			List<String> list2=new ArrayList<String>();
+			while (executeQuery.next()) {
+				list2.add(executeQuery.getString(1));
+			}
+				for (String string : list2) {
+					
+					System.out.println(string);
+					
+					if(name.equalsIgnoreCase(string)) 
+						showResult("select * from contact where name='"+name+"'");
+					
+				}
+			
+		
+		System.out.println("sorry not found");
+		mainMenu();
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	public void mainMenu() throws SQLException {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter 1 to Show all contacts\nEnter 2 to Search contact\nEnter 3 to Operation on contact");
+		int a = scanner.nextInt();
+		switch (a) {
+		case 1:
+
+			System.out.println("this is 1");
+			showResult("select * from contact");
+			break;
+		case 2:
+			System.out.println("Enter 1 to search\nEnter 2 to call\nEnter 3 to msg");
+			int b = scanner.nextInt();
+			switch (b) {
+			
+			case 1:
+				
+				getName("select name from contact");
+				
+				
+
+				break;
+			case 2:
+				System.out.println("enter your number");
+				long num = scanner.nextLong();
+
+				if (num == 7894025222l || num == 7894237654l || num == 9876234110l || num == 6754297543l
+						|| num == 6547290880l) {
+					System.out.println(num + "  nubmer is connecting for call......");
+					mainMenu();
+				} else {
+					System.out.println("This is an unknown number\n connecting to call");
+
+					mainMenu();
+				}
+				break;
+			case 3:
+				System.out.println("enter your number");
+				long num2 = scanner.nextLong();
+
+				if (num2 == 7894025222l || num2 == 7894237654l || num2 == 9876234110l || num2 == 6754297543l
+						|| num2 == 6547290880l) {
+					System.out.println("Enter your msg here");
+					String s=scanner.next();
+
+					String m = scanner.nextLine();
+
+					System.out.println("your msg is sucessfully sent....");
+					mainMenu();
+				} else {
+					System.out.println("This is an unknown number you are trying to send msg\n enter msg");
+					String m = scanner.next();
+					String msg = scanner.nextLine();
+					System.out.println("your msg is sucessfully sent....");
+
+					mainMenu();
+				}
+				break;
+
+			}
+			break;
+	
+
+		case 3:
+			System.out.println("this is 3");
+			System.out.println("enter 1 to update \n enter 2 to delete\n enter 3 to add contact details");
+			int u = scanner.nextInt();
+			switch (u) {
+			case 1:
+
+				System.out.println("enter 1 to update name\n enter 2\to update number\n etner 3 to update gmail id");
+				int no = scanner.nextInt();
+				switch (no) {
+				case 1:
+					System.out.println("enter sl no to update name");
+					int id = scanner.nextInt();
+					System.out.println("enter name");
+					String name = scanner.next();
+					update("update contact set name='" + name + "' where slno=" + id);
+					break;
+				case 2:
+					System.out.println("enter sl no to update phone number");
+					int id2 = scanner.nextInt();
+					System.out.println("enter phone number");
+					long phone = scanner.nextLong();
+					update("update contact set phno='" + phone + "' where slno=" + id2);
+					break;
+				case 3:
+					System.out.println("enter sl no to update mailid");
+					int id3 = scanner.nextInt();
+					System.out.println("enter your mail id");
+					String mail = scanner.next();
+					update("update contact set name='" + mail + "' where slno=" + id3);
+					break;
+
+				}
+				break;
+			case 2:
+				System.out.println("enter slno to delete");
+				int d = scanner.nextInt();
+				delete("delete from contact where slno =" + d);
+				break;
+			case 3:
+				System.out.println("enter slno , name, phno , gmailid");
+				int slno=scanner.nextInt();
+				String name=scanner.next();
+				long phno=scanner.nextLong();
+				String gmailid=scanner.next();
+				add("insert into contact values("+slno+",'"+name+"',"+phno+",'"+gmailid+"')");
+				break;
+			}
+
+			break;
+		default:
+			System.err.println("sorry invalid entry.. \nThank you visit again");
+		}
+	}
+	
+	
+	public void add(String query) throws SQLException {
+		Connection connection = null;
+		Statement statement = null;
+		ResultSet executeQuery = null;
+
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			String dburl = "jdbc:mysql://localhost:3306/case_study?user=root&password=LIKU@TIGER";
+			connection = DriverManager.getConnection(dburl);
+			String query2 = query;
+			statement = connection.createStatement();
+			int executeUpdate = statement.executeUpdate(query2);
+			System.out.println("values sucessfully Inserted  ");
+			System.out.println("Enter 1 to go main menu");
+			Scanner scanner = new Scanner(System.in);
+			int a = scanner.nextInt();
+			if (a == 1)
+				mainMenu();
+			else
+				System.err.println("sorry invalid entry.. \nThank you visit again");
+
+		} catch (ClassNotFoundException e) {
+
+			e.printStackTrace();
+		}
+
+		
+	}
+
+	
+	
+	
+	
+	
+	
+	private void delete(String query) throws SQLException {
+		Connection connection = null;
+		Statement statement = null;
+		ResultSet executeQuery = null;
+
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			String dburl = "jdbc:mysql://localhost:3306/case_study?user=root&password=LIKU@TIGER";
+			connection = DriverManager.getConnection(dburl);
+			String query2 = query;
+			statement = connection.createStatement();
+			int executeUpdate = statement.executeUpdate(query2);
+			System.out.println("Deleted sucessfully");
+			System.out.println("Enter 1 to go main menu");
+			Scanner scanner = new Scanner(System.in);
+			int a = scanner.nextInt();
+			if (a == 1)
+				mainMenu();
+			else
+				System.err.println("sorry invalid entry.. \nThank you visit again");
+
+		} catch (ClassNotFoundException e) {
+
+			e.printStackTrace();
+		}
+
+	}
+
+	public void showResult(String query) throws SQLException {
+		Connection connection = null;
+		Statement statement = null;
+		ResultSet executeQuery = null;
+
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			String dburl = "jdbc:mysql://localhost:3306/case_study?user=root&password=LIKU@TIGER";
+			connection = DriverManager.getConnection(dburl);
+			String query2 = query;
+			statement = connection.createStatement();
+			executeQuery = statement.executeQuery(query2);
+			System.out.println("sl.no" + "  Name     " + "   phone number    " + "   Gmail id    ");
+			while (executeQuery.next()) {
+				System.out.println(executeQuery.getInt(1) + "  " + executeQuery.getString(2) + "  "
+						+ executeQuery.getBigDecimal(3) + "  " + executeQuery.getString(4));
+
+			}
+			System.out.println("Enter 1 to go main menu");
+			Scanner scanner = new Scanner(System.in);
+			int a = scanner.nextInt();
+			if (a == 1)
+				mainMenu();
+			else
+				System.err.println("sorry invalid entry.. \nThank you visit again");
+
+		} catch (ClassNotFoundException e) {
+
+			e.printStackTrace();
+		}
+
+	}
+
+	public void update(String query) throws SQLException {
+		Connection connection = null;
+		Statement statement = null;
+		ResultSet executeQuery = null;
+
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			String dburl = "jdbc:mysql://localhost:3306/case_study?user=root&password=LIKU@TIGER";
+			connection = DriverManager.getConnection(dburl);
+			String query2 = query;
+			statement = connection.createStatement();
+			int executeUpdate = statement.executeUpdate(query2);
+			System.out.println("updated sucessfully");
+			System.out.println("Enter 1 to go main menu");
+			Scanner scanner = new Scanner(System.in);
+			int a = scanner.nextInt();
+			if (a == 1)
+				mainMenu();
+			else
+				System.err.println("sorry invalid entry.. \nThank you visit again");
+
+		} catch (ClassNotFoundException e) {
+
+			e.printStackTrace();
+		}
+
+	}
+
+	public static void main(String[] args) throws SQLException {
+		Contact contact = new Contact();
+		contact.mainMenu();
+
+	}
+
+}
