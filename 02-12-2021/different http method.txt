@@ -1,0 +1,13 @@
+PATCH
+PATCH is used to modify resources. The PATCH request only needs to contain the changes to the resource, 
+not the complete resource.
+In other words, the body should contain a set of instructions describing how a resource currently residing on 
+the server should be modified to produce a new version.
+DELETE
+DELETE is quite easy to understand. It is used to delete a resource identified by filters or ID.
+On successful deletion, the HTTP response status code 204 (No Content) returns with no response body.
+HEAD
+Same as GET, but transfers the status line and header section only.
+PUT
+Replaces all current representations of the target resource with the uploaded content.
+
