@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean class="com.technoelevate.springpractice.beans.Engine" name="eng">
+	<property name="cylinder" value="4" ></property>
+	<property name="hp" value="75" ></property>
+	</bean>
+	
+	<bean class="com.technoelevate.springpractice.beans.Wheel" name="wh">
+	<property name="name" value="mrf" ></property>
+	<property name="diameter" value="45" ></property>
+	</bean>
+	
+	<bean class="com.technoelevate.springpractice.beans.Vehicle" name="veh">
+	<property name="name" value="alto" ></property>
+	<property name="price" value="500000" ></property>
+	<property name="number" value="DL095970" ></property>
+	<property name="engine" ref="eng" ></property>
+	<property name="wheel" ref="wh" ></property>
+	</bean>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</beans>

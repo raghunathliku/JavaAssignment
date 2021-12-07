@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xmlns:p="http://www.springframework.org/schema/p"
+	  xmlns:c="http://www.springframework.org/schema/c"
+	 
+	  
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean class="com.technoelevate.springpractice.beans.Screen" name="scr">
+	<constructor-arg name="screenSize" value="1920x 1080 QHD/WQHD"/>
+	</bean>
+	
+	
+	<bean class="com.technoelevate.springpractice.beans.Processor" name="pro">
+	<constructor-arg name="name" value="AMD A4PRO 3340B"/>
+	</bean>
+	
+	<bean class="com.technoelevate.springpractice.beans.MotherBoard" name="mot">
+	<constructor-arg name="usbPort" value="3.2Gen1"/>
+	<constructor-arg name="videoConnector" value="HDMI,VGA"/>
+	</bean>
+	
+	<bean class="com.technoelevate.springpractice.beans.Ram" name="ra">
+	<constructor-arg name="size" value="4GB"/>
+	</bean>
+	
+	
+	<bean class="com.technoelevate.springpractice.beans.Laptop" name="lap">
+	<constructor-arg name="name" value="window-hp"/>
+	<constructor-arg name="ram" ref="ra"/>
+	<constructor-arg name="motherBoard" ref="mot"/>
+	<constructor-arg name="processor" ref="pro"/>
+	<constructor-arg name="screen" ref="scr"/>
+	
+	</bean>
+
+
+
+</beans>
