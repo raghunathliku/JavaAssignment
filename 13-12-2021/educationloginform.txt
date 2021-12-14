@@ -1,0 +1,70 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<fieldset>
+<legend>Education Login Form</legend>
+
+<form action="./educationLoginOutput" >
+<table>
+<tr>
+<td><label>Student First Name:</label></td>
+<td><input type="Person First Name" name="perf"></td>
+</tr>
+
+<td><label>Student Last Name:</label></td>
+<td><input type="Person Last Name" name="perl"></td>
+</tr>
+
+<tr>
+<td><label>College Name:</label></td>
+<td><input type="collegeName" name="cn"></td>
+</tr>
+
+<tr>
+<td><label>Type of course:</label></td>
+<td><input type="coursetype" name="ct"></td>
+</tr>
+
+<td><label>Branch:</label></td>
+<td><input type="branch" name="br"></td>
+</tr>
+
+<td><label>Year of Addmission:</label></td>
+<td><input type="admissionyear" name="ay"></td>
+</tr>
+
+<td><label>current semester:</label></td>
+<td><input type="semester" name="sr"></td>
+</tr>
+
+<tr>
+<td><label>Pass out year :</label></td>
+<td><input type="passingyear" name="py"></td>
+</tr>
+
+<tr>
+<td><label>Total CGPA:</label></td>
+<td><input type="totalcgpa" name="tc"></td>
+</tr>
+
+<tr>
+<td><label>Address:</label></td>
+<td><input type="address" name="add"></td>
+</tr>
+
+<tr>
+<td><input type="submit" ></td>
+</tr>
+
+
+</table>
+
+</form>
+</body>
+</html>

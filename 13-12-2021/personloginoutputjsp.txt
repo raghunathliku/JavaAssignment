@@ -1,0 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%String fname=(String) request.getAttribute("fname") ;
+    String lname= (String) request.getAttribute("lname");
+    String age= (String) request.getAttribute("ag");
+    String mail= (String) request.getAttribute("mail");
+    String gen= (String) request.getAttribute("gen");
+    String phno= (String) request.getAttribute("phn");
+    String address= (String) request.getAttribute("add");
+
+    %>
+    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Registered Perosn's Details</h1>
+<h2>First Name:<%=fname %></h2>
+<h2>Last Name:<%=lname %></h2>
+<h2>Age:<%=age %></h2>
+<h2>Gmail id:<%=mail %></h2>
+<h2>Gender:<%=gen %></h2>
+<h2>Contact No:<%=phno %></h2>
+<h2>Permanent Address:<%=address %></h2>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+
+<fieldset>
+<legend>Paitent Login Form</legend>
+
+<form action="./form2" >
+<table>
+<tr>
+<td><label>UserName:</label></td>
+<td><input type="username" name="user"></td>
+</tr>
+
+<tr>
+<td><label>Validation Id:</label></td>
+<td><input type="password" name="pass"></td>
+</tr>
+
+<tr>
+<td><label>Address:</label></td>
+<td><input type="address" name="add"></td>
+</tr>
+
+<tr>
+<td><label>Disease:</label></td>
+<td><input type="Disease" name="dis"></td>
+</tr>
+
+<td><label>BloodGroup:</label></td>
+<td><input type="BloodGroup" name="bg"></td>
+</tr>
+
+<td><label>HelathStaus:</label></td>
+<td><input type="HelathStaus" name="hs"></td>
+</tr>
+
+<tr>
+<td><input type="submit" ></td>
+</tr>
+
+
+</table>
+
+</form>
+
+
+
+
+
+
+</body>
+</html>

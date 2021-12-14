@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+     <%String user=(String) request.getAttribute("name") ;
+    String pass= (String) request.getAttribute("passWord");
+    String addr= (String) request.getAttribute("add");
+    String disease= (String) request.getAttribute("diss");
+    String bg= (String) request.getAttribute("bgr");
+    String health= (String) request.getAttribute("heal");
+    %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Patient Data</h1>
+<h2>Patient's Name:<%=user %></h2>
+<h2>Validation Id:<%=pass %></h2>
+<h2>Address:<%=addr %></h2>
+<h2>Type of Disease:<%=disease %></h2>
+<h2>Patient's Blood Group:<%=bg %></h2>
+<h2>Helath Status:<%=health %></h2>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<fieldset>
+<legend>Person Login Form</legend>
+
+<form action="./form3" >
+<table>
+<tr>
+<td><label>Person First Name:</label></td>
+<td><input type="Person First Name" name="perf"></td>
+</tr>
+
+<td><label>Person Last Name:</label></td>
+<td><input type="Person Last Name" name="perl"></td>
+</tr>
+
+<tr>
+<td><label>Age:</label></td>
+<td><input type="Age" name="ag"></td>
+</tr>
+
+<td><label>Email:</label></td>
+<td><input type="Email" name="mail"></td>
+</tr>
+
+<td><label>Gender:</label></td>
+<td><input type="Gender" name="gen"></td>
+</tr>
+
+<tr>
+<td><label>phone NO:</label></td>
+<td><input type="Phoneno" name="phno"></td>
+</tr>
+
+<tr>
+<td><label>Address:</label></td>
+<td><input type="address" name="add"></td>
+</tr>
+
+<tr>
+<td><input type="submit" ></td>
+</tr>
+
+
+</table>
+
+</form>
+
+
+</body>
+</html>

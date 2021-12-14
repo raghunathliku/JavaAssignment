@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%String fname=(String) request.getAttribute("fname") ;
+    String lname= (String) request.getAttribute("lname");
+    String college= (String) request.getAttribute("clg");
+    String course= (String) request.getAttribute("cour");
+    String branch= (String) request.getAttribute("br");
+    String admission= (String) request.getAttribute("adm");
+    String semester= (String) request.getAttribute("se");
+    String passingyear= (String) request.getAttribute("pass");
+    String cgpa= (String) request.getAttribute("cg");
+    String address= (String) request.getAttribute("add");
+
+
+    %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Registered Student's Details</h1>
+<h2>First Name:<%=fname %></h2>
+<h2>Last Name:<%=lname %></h2>
+<h2>College Name:<%=college %></h2>
+<h2>Course Type:<%=course %></h2>
+<h2>Branch Type:<%=branch %></h2>
+<h2>Admission Year:<%=admission %></h2>
+<h2>Current Semester:<%=semester %></h2>
+<h2>Passing Year:<%=passingyear %></h2>
+<h2>Total CGPA:<%=cgpa %></h2>
+<h2>Permanent Address:<%=address %></h2>
+</body>
+</html>
